@@ -1,0 +1,35 @@
+﻿@using Shared.Services
+@using Shared.Translations.Layout.NavMenu
+@rendermode InteractiveAuto
+@inject TranslationService<NavMenuTranslationManager> TranslationService
+
+<div class="top-row ps-3 navbar navbar-dark">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="">Demo</a>
+    </div>
+</div>
+
+<div class="nav-scrollable">
+    <nav class="flex-column">
+        <div class="nav-item px-3">
+            <NavLink class="nav-link" href="" Match="NavLinkMatch.All">
+                <span class="bi bi-house-door-fill-nav-menu" aria-hidden="true"></span> @Translations.Home
+            </NavLink>
+        </div>
+        <div class="nav-item px-3">
+            <NavLink class="nav-link" href="counter">
+                <span class="bi bi-plus-square-fill-nav-menu" aria-hidden="true"></span> @Translations.Counter
+            </NavLink>
+        </div>
+    </nav>
+</div>
+
+@code {
+    
+    INavMenuTranslation Translations;
+    
+    protected override void OnInitialized()
+    {
+        Translations = TranslationService.Translations;
+    }
+}

@@ -1,0 +1,5 @@
+C:\Users\User\Desktop\TranslatorGeneratorPub\TranslatorGenerator.exe
+C:\Users\User\Desktop\TranslatorGeneratorPub\TranslatorGenerator.dll
+C:\Users\User\Desktop\TranslatorGeneratorPub\TranslatorGenerator.deps.json
+C:\Users\User\Desktop\TranslatorGeneratorPub\TranslatorGenerator.runtimeconfig.json
+C:\Users\User\Desktop\TranslatorGeneratorPub\TranslatorGenerator.pdb

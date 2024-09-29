@@ -1,0 +1,96 @@
+@using System.Globalization
+@using Shared.Services
+@using Shared.Translations.Components.SharedComponents.CultureSelector
+@inject IJSRuntime JsRuntime
+@inject NavigationManager Navigation
+@inject TranslationService<CultureSelectorTranslationManager> TranslationService
+@rendermode InteractiveAuto
+
+<p>
+    <label>
+        @Translations.Selectlocale
+        <select @bind="@selectedCulture" @bind:after="ApplySelectedCultureAsync">
+            @foreach (var culture in supportedCultures)
+            {
+                <option value="@culture">@cultureDict[culture.Name]</option>
+            }
+        </select>
+    </label>
+</p>
+
+@code
+{
+    ICultureSelectorTranslation Translations;
+    
+    protected override void OnInitialized()
+    {
+        Translations = TranslationService.Translations;
+    }
+    
+    private Dictionary<string, string> cultureDict =
+        new()
+        {
+            { "en-US", "English (United States)" },
+            { "es-ES", "Español (España)" },
+            { "hu-HU", "Magyar (Magyarország)" }
+        };
+
+    private CultureInfo[] supportedCultures = new[]
+    {
+        new CultureInfo("en-US"),
+        new CultureInfo("es-ES"),
+        new CultureInfo("hu-HU"),
+    };
+
+    private CultureInfo? selectedCulture;
+    
+
+    protected override async Task OnAfterRenderAsync(bool firstRender)
+    {
+        if (firstRender)
+        {
+            var cultureName = await JsRuntime.InvokeAsync<string>("getLanguageCookie");
+            //Console.WriteLine($"Retrieved culture: {cultureName}");
+
+            if (cultureName != null)
+            {
+                selectedCulture = new CultureInfo(cultureName);
+            }
+            else
+            {
+                selectedCulture = CultureInfo.CurrentCulture;
+            }
+
+            // Fallback to supported cultures
+            if (supportedCultures.All(c => c.Name != selectedCulture.Name))
+            {
+                selectedCulture = new CultureInfo("en-US");
+            }
+
+        }
+    }
+
+
+    private async Task ApplySelectedCultureAsync()
+    {
+        if (CultureInfo.CurrentCulture != selectedCulture)
+        {
+            // Store the selected culture in the cookie using the setLanguageCookie JS function
+            await JsRuntime.InvokeVoidAsync("setLanguageCookie", selectedCulture!.Name);
+
+            CultureInfo.CurrentCulture = selectedCulture;
+            CultureInfo.CurrentUICulture = selectedCulture;
+            
+            
+             // Trigger a page reload to apply the selected culture
+             var uri = new Uri(Navigation.Uri)
+                 .GetComponents(UriComponents.PathAndQuery, UriFormat.Unescaped);
+             var cultureEscaped = Uri.EscapeDataString(selectedCulture.Name);
+             var uriEscaped = Uri.EscapeDataString(uri);
+             
+             Navigation.NavigateTo(
+                 $"Culture/Set?culture={cultureEscaped}&redirectUri={uriEscaped}",
+                 forceLoad: true);
+        }
+    }
+}

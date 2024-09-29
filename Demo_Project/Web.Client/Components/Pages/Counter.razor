@@ -1,0 +1,31 @@
+﻿@page "/counter"
+@using Shared.Services
+@using Shared.Translations.Components.Pages.Counter
+@layout MainLayout
+@rendermode InteractiveAuto
+@inject TranslationService<CounterTranslationManager> TranslationService
+
+<PageTitle>@Translations.PageTitle</PageTitle>
+
+<h1>@Translations.PageTitle</h1>
+
+<p role="status">@Translations.CurrentCount: @currentCount</p>
+
+<button class="btn btn-primary" @onclick="IncrementCount">@Translations.ClickMe</button>
+
+@code {
+    private ICounterTranslation Translations;
+    
+    private int currentCount = 0;
+
+    private void IncrementCount()
+    {
+        currentCount++;
+    }
+
+    protected override void OnInitialized()
+    {
+        Translations = TranslationService.Translations;
+    }
+
+}

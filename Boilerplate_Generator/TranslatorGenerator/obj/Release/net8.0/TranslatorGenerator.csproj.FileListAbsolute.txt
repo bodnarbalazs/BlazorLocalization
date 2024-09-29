@@ -1,0 +1,14 @@
+C:\Users\User\Desktop\Projects\Genesis\TranslatorGenerator\TranslatorGenerator\bin\Release\net8.0\TranslatorGenerator.exe
+C:\Users\User\Desktop\Projects\Genesis\TranslatorGenerator\TranslatorGenerator\bin\Release\net8.0\TranslatorGenerator.deps.json
+C:\Users\User\Desktop\Projects\Genesis\TranslatorGenerator\TranslatorGenerator\bin\Release\net8.0\TranslatorGenerator.runtimeconfig.json
+C:\Users\User\Desktop\Projects\Genesis\TranslatorGenerator\TranslatorGenerator\bin\Release\net8.0\TranslatorGenerator.dll
+C:\Users\User\Desktop\Projects\Genesis\TranslatorGenerator\TranslatorGenerator\bin\Release\net8.0\TranslatorGenerator.pdb
+C:\Users\User\Desktop\Projects\Genesis\TranslatorGenerator\TranslatorGenerator\obj\Release\net8.0\TranslatorGenerator.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\User\Desktop\Projects\Genesis\TranslatorGenerator\TranslatorGenerator\obj\Release\net8.0\TranslatorGenerator.AssemblyInfoInputs.cache
+C:\Users\User\Desktop\Projects\Genesis\TranslatorGenerator\TranslatorGenerator\obj\Release\net8.0\TranslatorGenerator.AssemblyInfo.cs
+C:\Users\User\Desktop\Projects\Genesis\TranslatorGenerator\TranslatorGenerator\obj\Release\net8.0\TranslatorGenerator.csproj.CoreCompileInputs.cache
+C:\Users\User\Desktop\Projects\Genesis\TranslatorGenerator\TranslatorGenerator\obj\Release\net8.0\TranslatorGenerator.dll
+C:\Users\User\Desktop\Projects\Genesis\TranslatorGenerator\TranslatorGenerator\obj\Release\net8.0\refint\TranslatorGenerator.dll
+C:\Users\User\Desktop\Projects\Genesis\TranslatorGenerator\TranslatorGenerator\obj\Release\net8.0\TranslatorGenerator.pdb
+C:\Users\User\Desktop\Projects\Genesis\TranslatorGenerator\TranslatorGenerator\obj\Release\net8.0\TranslatorGenerator.genruntimeconfig.cache
+C:\Users\User\Desktop\Projects\Genesis\TranslatorGenerator\TranslatorGenerator\obj\Release\net8.0\ref\TranslatorGenerator.dll

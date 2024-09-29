@@ -1,0 +1,24 @@
+﻿@page "/"
+@using Shared.Services
+@using Shared.Translations.Components.Pages.Home
+@using Web.Client.Components.SharedComponents
+@inject TranslationService<HomeTranslationManager> TranslationService
+@rendermode InteractiveAuto
+
+<PageTitle>@Translations.Pagetitle</PageTitle>
+
+<h1>@Translations.Helloworld</h1>
+
+@Translations.Greetingmessage
+
+<CultureSelector></CultureSelector>
+
+@code
+{
+    private IHomeTranslation Translations;
+    
+    protected override void OnInitialized()
+    {
+        Translations = TranslationService.Translations;
+    }
+}
