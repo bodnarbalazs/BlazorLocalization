@@ -56,7 +56,7 @@
  
  ### Prerequisites
  
- - [.NET 6 SDK](https:dotnet.microsoft.com/download/dotnet/6.0) or later.
+ - [.NET 8 SDK](https:dotnet.microsoft.com/download/dotnet/8.0) or later.
  - Basic understanding of Blazor (Server and WebAssembly) applications.
  - Familiarity with C# and .NET localization concepts.
  
@@ -130,7 +130,6 @@
     **Important Notes:**
  
     - Use `;` as the delimiter.
-    - If a translation contains a semicolon (`;`) or a double quote (`"`), enclose the entire field in double quotes and escape double quotes by doubling them (`""`).
  
  ### Generating Boilerplate Code
  
